@@ -15,6 +15,11 @@ Array::Array(int s)
 		arr = new int[s];
 		size = s;
 	}
+	else
+	{
+		throw exception("Size must be >0");
+	}
+
 }
 
 Array::Array(const Array& obj)  // конструктор копировани€
@@ -64,6 +69,10 @@ void Array::fillArr()  // «аполн€ть массив значени€ми
 
 void Array::changeSize(int s) // »змен€ть размер масссива
 {
+	if (s <= 0)
+	{
+		throw exception ("Size must be >0 ");
+	}
 	int* newArr = new int[s];
 
 	if (arr != nullptr)
